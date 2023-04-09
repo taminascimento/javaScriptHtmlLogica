@@ -1,0 +1,118 @@
+    /*<meta charset="UTF-8">
+    <script>
+
+        function pulaLinha() {
+
+            document.write("<br>");
+        }
+
+        function mostra(frase) {
+
+            document.write(frase);
+            pulaLinha();
+        }
+
+
+        function sorteia(n) {
+
+            return n;
+            n = Math.random()*10;
+        }
+
+       // var numeroPensado = Math.round(Math.random() * 100);
+
+       var numeroPensado = sorteia
+
+        var chute = parseInt(prompt("Já pensei. Qual você acha que é?"));
+
+        if(chute == numeroPensado) {
+
+            mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado);
+        } else {
+
+            mostra("Você errou! Eu tinha pensado no " + numeroPensado);
+        }
+    </script>*/
+
+
+    <meta charset="UTF-8">
+    <script>
+
+    function pulaLinha() {
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function sorteia(n) {
+        return Math.floor(Math.random() * (n + 1));
+    }
+
+    var n = parseInt(prompt("Até qual número você gostaria de jogar?"));
+    var numeroPensado = sorteia(n);
+
+    var tentativas = 1;
+    while (tentativas <= 3) {
+        var chute = parseInt(prompt("Tentativa " + tentativas + ": Qual número eu pensei? (0 a " + n + ")"));
+
+        if (chute == numeroPensado) {
+            mostra("Parabéns, você acertou! O número pensado era " + numeroPensado + ".");
+            break;
+        } else if (chute < numeroPensado) {
+            mostra("Tentativa " + tentativas + ": Errou! O número pensado é maior que " + chute + ".");
+        } else if (chute > numeroPensado) {
+            mostra("Tentativa " + tentativas + ": Errou! O número pensado é menor que " + chute + ".");
+        }
+        
+        tentativas++;
+    }
+
+    if (tentativas > 3) {
+        mostra("Você perdeu! O número pensado era " + numeroPensado + ".");
+    }
+
+    </script>
+
+    /*Nessa modificação, no else if que verifica se o chute do usuário é menor que o número pensado, adicionamos a mensagem "O número pensado é maior que [chute]." E no else if que verifica se o chute é maior, adicionamos a mensagem "O número pensado é menor que [chute].". Assim, o usuário tem uma dica para ajudar nas próximas tentativas.*/
+
+    // da alura
+
+    <meta charset="UTF-8">
+    <script>
+
+        function pulaLinha() {
+
+            document.write("<br>");
+        }
+
+        function mostra(frase) {
+
+            document.write(frase);
+            pulaLinha();
+        }
+
+        function sorteia() {
+
+            return Math.round(Math.random() * 100);
+        }   
+
+        var numeroPensado = sorteia();
+
+        var chute = parseInt(prompt("Já pensei. Qual você acha que é?"));
+
+        if(chute == numeroPensado) {
+
+            mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado);
+        } else {
+
+             var contador = 1;
+
+            while( contador < 10 ) {
+
+                mostra("Já era, você errou!");
+            }
+        }
+    </script>
